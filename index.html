@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI魅力鑑定｜人を動かすあなたの才能</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b1026'/%3E%3Ctext y='70' x='50' font-size='56' text-anchor='middle'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E">
+<meta name="description" content="5つの質問でわかる、人を動かすあなたの隠れた才能。AI魅力鑑定で、あなたのタイプと“稼ぐ力”の正体を見つけましょう。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI魅力鑑定｜人を動かすあなたの才能">
+<meta property="og:description" content="5つの質問でわかる、人を動かすあなたの隠れた才能。">
+<style>
+:root{
+  --navy:#0b1026; --navy2:#141b3d; --gold:#f2c84b; --gold2:#e0a83a; --goldlt:#ffe9a8;
+  --txt:#eef1ff; --sub:#aab2d8; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{min-height:100%;}
+html{
+  background:radial-gradient(120% 80% at 50% -10%, #20295a 0%, var(--navy) 52%, #05070f 100%) no-repeat;
+  background-attachment:fixed; background-color:#05070f;
+}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  background:transparent; color:var(--txt); line-height:1.8; overflow-x:hidden;
+  word-break:keep-all; overflow-wrap:break-word; line-break:strict;
+}
+/* タイトル系は明朝で高級・神秘感を底上げ */
+.serif{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho","MS PMincho",serif;}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:24px 20px 70px;min-height:100%;}
+.screen{display:none;animation:fade .5s ease;}
+.screen.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+@keyframes pop{from{opacity:0;transform:scale(.9);}to{opacity:1;transform:scale(1);}}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 6px rgba(242,200,75,.4));}50%{filter:drop-shadow(0 0 16px rgba(242,200,75,.8));}}
+
+/* ---- TOP ---- */
+.brand{text-align:center;font-size:12px;letter-spacing:.32em;color:var(--gold);margin-top:18px;font-weight:700;}
+.ai-badge{display:inline-block;margin:0 auto;font-size:11px;letter-spacing:.12em;font-weight:800;color:#2a1d00;
+  background:linear-gradient(135deg,var(--goldlt),var(--gold2));border-radius:99px;padding:5px 16px;
+  box-shadow:0 4px 16px rgba(242,200,75,.4);}
+.hero{text-align:center;margin-top:26px;}
+.hero .crest{font-size:46px;animation:glow 2.6s ease-in-out infinite;}
+.hero h1{font-size:31px;font-weight:800;letter-spacing:.06em;line-height:1.5;margin-top:8px;
+  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+  background:linear-gradient(135deg,#fff 18%,var(--goldlt) 58%,var(--gold) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  text-shadow:0 2px 20px rgba(242,200,75,.15);}
+.hero .sub-title{color:var(--gold);font-size:15px;font-weight:700;margin-top:14px;letter-spacing:.06em;}
+.hero p.desc{color:var(--sub);margin-top:18px;font-size:15px;}
+.hero p.desc b{color:var(--txt);}
+.types-row{display:flex;justify-content:center;gap:9px;margin:24px 0 6px;flex-wrap:wrap;}
+.type-chip{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:26px;border:1px solid var(--line);background:rgba(255,255,255,.04);box-shadow:0 4px 16px rgba(0,0,0,.4);}
+.btn{
+  display:block;width:100%;border:none;cursor:pointer;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--goldlt),var(--gold2));color:#2a1d00;
+  font-size:18px;font-weight:800;letter-spacing:.05em;padding:19px;border-radius:16px;line-height:1.4;
+  box-shadow:0 8px 28px rgba(242,200,75,.4);transition:transform .15s;margin-top:28px;
+}
+.btn:active{transform:scale(.97);}
+.btn::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);
+  transform:skewX(-20deg);animation:ddshine 3.4s ease-in-out infinite;}
+@keyframes ddshine{0%{left:-60%;}50%,100%{left:140%;}}
+.btn.ghost{background:rgba(242,200,75,.08);color:var(--gold);border:1.5px solid var(--gold);box-shadow:none;font-weight:700;font-size:16px;}
+.btn.ghost::before{display:none;}
+.btn.line{background:linear-gradient(135deg,#1faf63,#0c8f4d);color:#fff;border:1px solid rgba(242,200,75,.45);box-shadow:0 8px 26px rgba(0,0,0,.35),0 0 0 1px rgba(242,200,75,.15) inset;}
+.note{text-align:center;color:var(--sub);font-size:12px;margin-top:16px;}
+
+/* ---- QUESTION ---- */
+.qhead{display:flex;align-items:center;justify-content:space-between;margin-top:6px;}
+.qcount{font-size:13px;color:var(--gold);letter-spacing:.1em;font-weight:700;}
+.bar{height:6px;background:rgba(255,255,255,.1);border-radius:99px;margin:14px 0 28px;overflow:hidden;}
+.bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--goldlt),var(--gold2));border-radius:99px;transition:width .4s ease;}
+.qtext{font-size:20px;font-weight:800;line-height:1.55;min-height:64px;}
+.choices{margin-top:18px;display:flex;flex-direction:column;gap:12px;}
+.choice{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+  font-size:15.5px;font-weight:600;cursor:pointer;transition:all .15s;text-align:left;color:var(--txt);
+}
+.choice:active{transform:scale(.98);}
+.choice:hover{border-color:var(--gold);background:rgba(242,200,75,.08);}
+.choice.picked{border-color:var(--gold);background:rgba(242,200,75,.16);}
+/* 選んだ瞬間の持ち上げコメント */
+.qcomment{margin-top:16px;font-size:14px;font-weight:700;color:var(--gold);text-align:center;
+  background:rgba(242,200,75,.08);border:1px solid rgba(242,200,75,.28);border-radius:12px;
+  padding:13px 14px;opacity:0;transform:translateY(6px);transition:all .35s;line-height:1.6;}
+.qcomment.show{opacity:1;transform:none;}
+.back{margin-top:22px;text-align:center;}
+.back button{background:none;border:none;color:var(--sub);font-size:13px;cursor:pointer;text-decoration:underline;}
+
+/* ---- LOADING ---- */
+.loadwrap{text-align:center;padding-top:78px;}
+.spinner{width:64px;height:64px;margin:0 auto 28px;border-radius:50%;
+  border:4px solid rgba(242,200,75,.2);border-top-color:var(--gold);animation:spin 1s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loadwrap p{color:var(--sub);font-size:15px;}
+
+/* ---- RESULT ---- */
+.r-head{text-align:center;margin-top:14px;}
+.r-head .ai-tag{font-size:11px;letter-spacing:.14em;color:var(--gold);font-weight:800;}
+.r-crest{text-align:center;margin-top:18px;animation:pop .7s ease;}
+.r-crest .emoji{font-size:78px;animation:glow 2.6s ease-in-out infinite;display:inline-block;}
+.r-you{color:var(--sub);font-size:14px;text-align:center;margin-top:14px;}
+.r-name{font-size:35px;font-weight:800;text-align:center;margin-top:4px;letter-spacing:.05em;
+  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+  background:linear-gradient(135deg,#fff 8%,var(--goldlt) 52%,var(--gold) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  text-shadow:0 2px 22px rgba(242,200,75,.18);}
+.r-lead{color:var(--gold);font-size:15px;font-weight:700;text-align:center;margin-top:10px;line-height:1.6;padding:0 6px;}
+.r-rarity{display:block;width:fit-content;margin:16px auto 0;font-size:12.5px;font-weight:800;letter-spacing:.06em;color:#2a1d00;white-space:nowrap;
+  background:linear-gradient(135deg,var(--goldlt),var(--gold2));border-radius:99px;padding:8px 22px;box-shadow:0 4px 16px rgba(242,200,75,.4);}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:22px;}
+.card h3{font-size:13px;color:var(--gold);letter-spacing:.12em;margin-bottom:11px;font-weight:800;}
+.card p{font-size:15px;color:var(--txt);line-height:1.9;text-align:left;}
+.card h3{text-align:left;}
+/* 本文ブロックは一律左揃え（高級感・可読性） */
+.weapon .wbody{text-align:left;}
+.r-lead{text-align:center;}
+/* 数字も含めて書体を揃える：本文中のbタグのウェイトを落として浮きを防ぐ */
+.card p b,.cta-wrap p b,.dd-bridge p b,.hero p b{font-weight:700;}
+.card.hl{background:linear-gradient(160deg,rgba(242,200,75,.13),rgba(242,200,75,.02));border-color:rgba(242,200,75,.4);}
+
+/* deepdive bridge（もっと詳しく聞いてみる＝後半5問へ） */
+.dd-bridge{margin-top:28px;background:linear-gradient(160deg,rgba(242,200,75,.14),rgba(255,255,255,.02));
+  border:1px solid rgba(242,200,75,.4);border-radius:18px;padding:24px 20px;text-align:center;}
+.dd-bridge h3{font-size:18px;font-weight:800;color:var(--gold);line-height:1.5;}
+.dd-bridge p{font-size:14px;color:var(--sub);margin-top:12px;line-height:1.75;}
+
+/* 武器（深掘り結果） */
+.weapon{background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.01));
+  border:1px solid var(--line);border-radius:16px;padding:20px 18px;margin-top:16px;position:relative;overflow:hidden;}
+.weapon::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;
+  background:linear-gradient(180deg,var(--goldlt),var(--gold2));}
+.weapon .wlabel{font-size:11px;letter-spacing:.16em;color:var(--gold);font-weight:800;}
+.weapon .wname{font-size:22px;font-weight:800;margin-top:6px;letter-spacing:.04em;
+  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+  background:linear-gradient(135deg,#fff,var(--goldlt));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.weapon .wbody{font-size:14.5px;color:var(--txt);line-height:1.85;margin-top:11px;}
+
+/* CTA */
+.cta-wrap{margin-top:32px;background:linear-gradient(160deg,rgba(242,200,75,.16),rgba(120,90,255,.06));
+  border:1.5px solid rgba(242,200,75,.5);border-radius:20px;padding:28px 22px;text-align:center;
+  box-shadow:0 10px 40px rgba(0,0,0,.4);}
+.cta-wrap .cta-crest{font-size:34px;animation:glow 2.6s ease-in-out infinite;}
+.cta-wrap h3{font-size:21px;font-weight:800;color:#fff;margin-top:10px;line-height:1.55;letter-spacing:.03em;
+  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;}
+.cta-wrap h3 .em{color:var(--gold);}
+.cta-wrap p{font-size:14.5px;color:var(--sub);margin-top:14px;line-height:1.8;}
+
+.share{margin-top:30px;text-align:center;}
+.share-lead{font-size:14px;color:var(--sub);margin-bottom:14px;}
+.foot{text-align:center;color:var(--sub);font-size:11px;margin-top:40px;line-height:1.8;}
+.locknote{font-size:12px;color:var(--sub);margin-top:14px;}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="wrap">
+
+  <!-- ===== TOP ===== -->
+  <section class="screen active" id="s-top">
+    <div style="text-align:center;margin-top:6px;"><span class="ai-badge">AI 魅 力 鑑 定</span></div>
+    <div class="hero">
+      <div class="crest">✨</div>
+      <h1>人を動かす<br>あなたの才能</h1>
+      <div class="sub-title">〜 AIが、あなたの隠れた魅力を鑑定します 〜</div>
+      <p class="desc"><b>たった5つの質問</b>でわかる、<br>あなたが生まれ持った<br><b>「人を動かす力」</b>のタイプ。</p>
+    </div>
+    <div class="types-row" id="topTypes"></div>
+    <button class="btn" onclick="start()">鑑定をはじめる（無料）</button>
+    <p class="note">所要時間 約1分 ／ 結果はその場でわかります</p>
+  </section>
+
+  <!-- ===== QUESTION（前半・後半 共用） ===== -->
+  <section class="screen" id="s-q">
+    <div class="qhead"><span class="qcount" id="qcount"></span></div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="qtext" id="qtext"></div>
+    <div class="choices" id="choices"></div>
+    <div class="qcomment" id="qcomment"></div>
+    <div class="back"><button onclick="back()" id="backBtn">← 前の質問にもどる</button></div>
+  </section>
+
+  <!-- ===== LOADING ===== -->
+  <section class="screen" id="s-load">
+    <div class="loadwrap">
+      <div class="spinner"></div>
+      <p id="loadMsg">AIがあなたの魅力を鑑定しています…</p>
+    </div>
+  </section>
+
+  <!-- ===== RESULT（前半判定） ===== -->
+  <section class="screen" id="s-result">
+    <div class="r-head"><span class="ai-tag">AI 鑑 定 結 果</span></div>
+    <div class="r-crest"><span class="emoji" id="rEmoji"></span></div>
+    <div class="r-you">あなたの魅力タイプは</div>
+    <div class="r-name" id="rName"></div>
+    <div class="r-lead" id="rLead"></div>
+    <span class="r-rarity" id="rRarity"></span>
+
+    <div class="card hl">
+      <h3>あなたの魅力の正体</h3>
+      <p id="rShort"></p>
+    </div>
+
+    <div class="card">
+      <h3>この魅力が、人を惹きつける</h3>
+      <p id="rDesc"></p>
+    </div>
+
+    <!-- もっと詳しく聞いてみる（後半5問へ） -->
+    <div class="dd-bridge">
+      <h3>🔍 もっと詳しく、<br>聞いてみませんか？</h3>
+      <p>ここから先は、<b style="color:var(--txt)">あなただけが持つ「3つの武器」</b>を、<br>AIがさらに深く読み解きます。<br>あと5つの質問で、才能の“使い方”まで見えてくる。</p>
+      <button class="btn" onclick="startBack()" style="margin-top:20px;">さらに詳しく鑑定する</button>
+    </div>
+
+    <div class="share">
+      <button class="btn ghost" onclick="restart()">もう一度、最初から鑑定する</button>
+    </div>
+    <div class="foot">
+      AI魅力鑑定 〜人を動かすあなたの才能〜<br>
+      ※この鑑定はエンタメ・自己理解を目的としたものです
+    </div>
+  </section>
+
+  <!-- ===== DEEP RESULT（深掘り＝武器＋CTA） ===== -->
+  <section class="screen" id="s-deep">
+    <div class="r-head"><span class="ai-tag">AI 深 層 鑑 定</span></div>
+    <div class="r-crest"><span class="emoji" id="dEmoji"></span></div>
+    <div class="r-you">あなた＝<b id="dNameInline" style="color:var(--gold)"></b> が持つ</div>
+    <div class="r-name" style="font-size:26px;margin-top:6px;">3つの武器</div>
+    <p style="text-align:center;color:var(--sub);font-size:13.5px;margin-top:12px;">これが、あなたが無意識に使っている“人を動かす力”の正体です。</p>
+
+    <div id="weapons"></div>
+
+    <div class="card hl" style="margin-top:24px;">
+      <h3>あなたの才能を、お金に変える</h3>
+      <p id="dMoney"></p>
+    </div>
+
+    <!-- 最終CTA -->
+    <div class="cta-wrap">
+      <div class="cta-crest">✨</div>
+      <h3>あなたの才能を活かす<br><span class="em">ロードマップ</span>に参加する</h3>
+      <p>あなたの「3つの武器」を、<br><b style="color:var(--txt)">どう仕事と収入に変えていくか</b>。<br>その具体的なロードマップを、無料でお渡しします。<br>下のボタンから受け取ってください。</p>
+      <a id="ctaLink" href="#" target="_blank" rel="noopener"><button class="btn line" style="margin-top:22px;">LINEでロードマップを受け取る</button></a>
+    </div>
+
+    <div class="share">
+      <button class="btn ghost" onclick="restart()">もう一度、最初から鑑定する</button>
+    </div>
+    <div class="foot">
+      AI魅力鑑定 〜人を動かすあなたの才能〜<br>
+      ※この鑑定はエンタメ・自己理解を目的としたものです
+    </div>
+  </section>
+
+</div>
+
+<script src="data.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+
+// ▼▼▼ LINE登録URL（あとで差し替え） ▼▼▼
+const LINE_URL = "#";
+// ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+let phase="front";          // "front" | "back"
+let cur=0, frontAns=[], backAns=[], locked=false, resultKey=null;
+
+// top type chips
+$("topTypes").innerHTML = TYPE_ORDER.map(k=>`<div class="type-chip" title="${TYPES[k].name}">${TYPES[k].emoji}</div>`).join("");
+
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');window.scrollTo(0,0);}
+
+function curList(){ return phase==="front" ? QUESTIONS_FRONT : QUESTIONS_BACK; }
+
+function start(){ phase="front"; cur=0; frontAns=[]; locked=false; show('s-q'); render(); }
+function startBack(){ phase="back"; cur=0; backAns=[]; locked=false; show('s-q'); render(); }
+function restart(){ try{history.replaceState(null,"",location.pathname);}catch(e){} show('s-top'); }
+
+function render(){
+  const L=curList(), Q=L[cur], total=L.length, remain=total-cur;
+  const prefix = phase==="back" ? "深層 Q" : "Q";
+  $("qcount").textContent = remain<=1 ? `${prefix}${cur+1} / ${total}・最後の質問！` : `${prefix}${cur+1} / ${total}・あと${remain-1}問`;
+  $("bar").style.width=(((cur+1)/total)*100)+"%";
+  $("qtext").textContent=Q.q;
+  $("backBtn").style.visibility = cur===0 ? "hidden":"visible";
+  $("qcomment").classList.remove("show"); $("qcomment").textContent="";
+  $("choices").innerHTML="";
+  Q.choices.forEach((c,i)=>{
+    const b=document.createElement("button");
+    b.className="choice"; b.textContent=c.label;
+    b.onclick=()=>choose(i,b);
+    $("choices").appendChild(b);
+  });
+}
+
+function choose(i,btn){
+  if(locked)return;
+  locked=true;
+  const L=curList(), Q=L[cur];
+  if(phase==="front") frontAns[cur]=i; else backAns[cur]=i;
+  // ハイライト
+  Array.from($("choices").children).forEach(c=>c.classList.remove("picked"));
+  if(btn) btn.classList.add("picked");
+  // 持ち上げコメント（選択肢個別 c があれば優先、なければ設問共通 c）
+  const comment = (Q.choices[i] && Q.choices[i].c) ? Q.choices[i].c : (Q.c||"");
+  if(comment){ $("qcomment").textContent=comment; void $("qcomment").offsetWidth; $("qcomment").classList.add("show"); }
+  const delay = comment ? 1050 : 250;
+  setTimeout(()=>{
+    if(cur < L.length-1){ cur++; render(); }
+    else finish();
+    locked=false;
+  }, delay);
+}
+
+function back(){ if(locked)return; if(cur>0){cur--;render();} }
+
+function finish(){
+  $("bar").style.width="100%";
+  show('s-load');
+  const msgs = phase==="front"
+    ? ["AIがあなたの魅力を鑑定しています…","6つの才能の中から探しています…","あなたのタイプを特定しています…"]
+    : ["あなたの“武器”を読み解いています…","才能の使い方を分析しています…","鑑定結果をまとめています…"];
+  $("loadMsg").textContent=msgs[0];
+  let mi=0; const t=setInterval(()=>{mi=(mi+1)%msgs.length;$("loadMsg").textContent=msgs[mi];},850);
+  setTimeout(()=>{
+    clearInterval(t);
+    if(phase==="front"){ renderFront(); } else { renderDeep(); }
+  }, 2400);
+}
+
+function renderFront(){
+  const r = diagnose(frontAns, null);
+  resultKey = r.key;
+  const t = r.type;
+  $("rEmoji").textContent = t.emoji;
+  $("rName").textContent = t.name;
+  $("rLead").textContent = t.lead;
+  $("rRarity").textContent = `100人に ${t.rarity} 人 ／ 6タイプ中`;
+  $("rShort").textContent = t.short;
+  $("rDesc").textContent = t.desc;
+  show('s-result');
+}
+
+function renderDeep(){
+  // 後半も加味して再判定（前半の型を尊重しつつ精度UP）
+  const r = diagnose(frontAns, backAns);
+  // 前半で出た型を主軸に固定（ブレ防止）。深層は補強に使う設計。
+  const key = resultKey || r.key;
+  const t = TYPES[key];
+  $("dEmoji").textContent = t.emoji;
+  $("dNameInline").textContent = t.name;
+  $("dMoney").textContent = t.money;
+  const wlabels = ["第一の武器","第二の武器","第三の武器"];
+  $("weapons").innerHTML = t.weapons.map((w,i)=>`
+    <div class="weapon">
+      <div class="wlabel">${wlabels[i]||"武器"}</div>
+      <div class="wname">${w.name}</div>
+      <div class="wbody">${w.body}</div>
+    </div>`).join("");
+  $("ctaLink").href = LINE_URL;
+  show('s-deep');
+}
+
+// starfield
+(function(){
+  const c=$("stars"),x=c.getContext("2d");let w,h,st=[];
+  function rs(){w=c.width=innerWidth;h=c.height=innerHeight;st=[];const n=Math.min(110,Math.floor(w*h/12000));for(let i=0;i<n;i++)st.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.3+.2,o:Math.random(),s:Math.random()*.02+.004});}
+  function draw(){x.clearRect(0,0,w,h);st.forEach(p=>{p.o+=p.s;let o=Math.abs(Math.sin(p.o));x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle=`rgba(255,240,200,${o*.8})`;x.fill();});requestAnimationFrame(draw);}
+  rs();draw();addEventListener("resize",rs);
+})();
+</script>
+</body>
+</html>
