@@ -51,8 +51,9 @@ body{
 .hero p.desc{color:var(--sub);margin-top:18px;font-size:15px;}
 .hero p.desc b{color:var(--txt);}
 .types-row{display:flex;justify-content:center;gap:9px;margin:24px 0 6px;flex-wrap:wrap;}
-.type-chip{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+.type-chip{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;
   font-size:26px;border:1px solid var(--line);background:rgba(255,255,255,.04);box-shadow:0 4px 16px rgba(0,0,0,.4);}
+.type-chip img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
 .btn{
   display:block;width:100%;border:none;cursor:pointer;position:relative;overflow:hidden;
   background:linear-gradient(135deg,var(--goldlt),var(--gold2));color:#2a1d00;
@@ -66,7 +67,7 @@ body{
 @keyframes ddshine{0%{left:-60%;}50%,100%{left:140%;}}
 .btn.ghost{background:rgba(242,200,75,.08);color:var(--gold);border:1.5px solid var(--gold);box-shadow:none;font-weight:700;font-size:16px;}
 .btn.ghost::before{display:none;}
-.btn.line{background:linear-gradient(135deg,#1faf63,#0c8f4d);color:#fff;border:1px solid rgba(242,200,75,.45);box-shadow:0 8px 26px rgba(0,0,0,.35),0 0 0 1px rgba(242,200,75,.15) inset;}
+.btn.line{background:linear-gradient(135deg,#1faf63,#0c8f4d);color:#fff;border:1px solid color-mix(in srgb,var(--tc,#f2c84b) 50%, transparent);box-shadow:0 8px 26px rgba(0,0,0,.35),0 0 22px color-mix(in srgb,var(--tc,#f2c84b) 22%, transparent);}
 .note{text-align:center;color:var(--sub);font-size:12px;margin-top:16px;}
 
 /* ---- QUESTION ---- */
@@ -98,22 +99,46 @@ body{
 @keyframes spin{to{transform:rotate(360deg);}}
 .loadwrap p{color:var(--sub);font-size:15px;}
 
-/* ---- RESULT ---- */
-.r-head{text-align:center;margin-top:14px;}
-.r-head .ai-tag{font-size:11px;letter-spacing:.14em;color:var(--gold);font-weight:800;}
-.r-crest{text-align:center;margin-top:18px;animation:pop .7s ease;}
-.r-crest .emoji{font-size:78px;animation:glow 2.6s ease-in-out infinite;display:inline-block;}
-.r-you{color:var(--sub);font-size:14px;text-align:center;margin-top:14px;}
-.r-name{font-size:35px;font-weight:800;text-align:center;margin-top:4px;letter-spacing:.05em;
+/* ---- RESULT（鑑定書風＋型カラー） ---- */
+/* --tc = type color（JSで型ごとに注入） */
+.r-scroll{position:relative;margin-top:20px;padding:30px 22px 26px;border-radius:22px;text-align:center;
+  background:
+    radial-gradient(120% 90% at 50% 0%, color-mix(in srgb, var(--tc,#f2c84b) 22%, transparent) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+  border:1px solid color-mix(in srgb, var(--tc,#f2c84b) 45%, var(--line));
+  box-shadow:0 0 0 1px rgba(255,255,255,.04) inset, 0 14px 50px rgba(0,0,0,.5),
+    0 0 40px color-mix(in srgb, var(--tc,#f2c84b) 18%, transparent);
+  animation:pop .7s ease;overflow:hidden;}
+.r-scroll::before{content:"";position:absolute;inset:6px;border-radius:16px;
+  border:1px solid color-mix(in srgb, var(--tc,#f2c84b) 30%, transparent);pointer-events:none;}
+.r-head{text-align:center;}
+.r-head .ai-tag{font-size:11px;letter-spacing:.28em;color:color-mix(in srgb,var(--tc,#f2c84b) 80%, #fff);font-weight:800;}
+.r-deco{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:8px;}
+.r-deco i{height:1px;width:46px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--tc,#f2c84b) 70%, transparent));}
+.r-deco i.r{background:linear-gradient(90deg,color-mix(in srgb,var(--tc,#f2c84b) 70%, transparent),transparent);}
+.r-deco span{font-size:11px;letter-spacing:.2em;color:var(--sub);font-weight:700;}
+.r-emblem{position:relative;width:128px;height:128px;margin:16px auto 0;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 38%, color-mix(in srgb,var(--tc,#f2c84b) 30%, transparent), transparent 70%);
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--tc,#f2c84b) 55%, transparent),
+    0 0 0 7px rgba(255,255,255,.03), 0 0 36px color-mix(in srgb,var(--tc,#f2c84b) 30%, transparent) inset;}
+.r-emblem::before{content:"";position:absolute;inset:-9px;border-radius:50%;
+  border:1px dashed color-mix(in srgb,var(--tc,#f2c84b) 40%, transparent);animation:spin 32s linear infinite;}
+.r-emblem .emoji{font-size:66px;animation:glow 2.6s ease-in-out infinite;display:inline-block;}
+.r-emblem img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
+  box-shadow:0 0 30px color-mix(in srgb,var(--tc,#f2c84b) 35%, transparent);}
+.r-you{color:var(--sub);font-size:13.5px;text-align:center;margin-top:18px;letter-spacing:.08em;}
+.r-name{font-size:36px;font-weight:800;text-align:center;margin-top:6px;letter-spacing:.06em;
   font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
-  background:linear-gradient(135deg,#fff 8%,var(--goldlt) 52%,var(--gold) 100%);
+  background:linear-gradient(135deg,#fff 6%, color-mix(in srgb,var(--tc,#f2c84b) 40%, #fff) 48%, var(--tc,#f2c84b) 100%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  text-shadow:0 2px 22px rgba(242,200,75,.18);}
-.r-lead{color:var(--gold);font-size:15px;font-weight:700;text-align:center;margin-top:10px;line-height:1.6;padding:0 6px;}
-.r-rarity{display:block;width:fit-content;margin:16px auto 0;font-size:12.5px;font-weight:800;letter-spacing:.06em;color:#2a1d00;white-space:nowrap;
-  background:linear-gradient(135deg,var(--goldlt),var(--gold2));border-radius:99px;padding:8px 22px;box-shadow:0 4px 16px rgba(242,200,75,.4);}
+  text-shadow:0 2px 26px color-mix(in srgb,var(--tc,#f2c84b) 30%, transparent);}
+.r-lead{color:color-mix(in srgb,var(--tc,#f2c84b) 75%, #fff);font-size:14.5px;font-weight:700;text-align:center;margin-top:12px;line-height:1.7;padding:0 4px;}
+.r-rarity{display:block;width:fit-content;margin:18px auto 0;font-size:12.5px;font-weight:800;letter-spacing:.06em;color:#1a1205;white-space:nowrap;
+  background:linear-gradient(135deg, color-mix(in srgb,var(--tc,#f2c84b) 35%, #ffe9a8), var(--tc,#e0a83a));
+  border-radius:99px;padding:8px 22px;box-shadow:0 4px 18px color-mix(in srgb,var(--tc,#f2c84b) 45%, transparent);}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:22px;}
-.card h3{font-size:13px;color:var(--gold);letter-spacing:.12em;margin-bottom:11px;font-weight:800;}
+.card h3{font-size:13px;color:color-mix(in srgb,var(--tc,#f2c84b) 78%, #fff);letter-spacing:.12em;margin-bottom:11px;font-weight:800;}
 .card p{font-size:15px;color:var(--txt);line-height:1.9;text-align:left;}
 .card h3{text-align:left;}
 /* 本文ブロックは一律左揃え（高級感・可読性） */
@@ -121,12 +146,14 @@ body{
 .r-lead{text-align:center;}
 /* 数字も含めて書体を揃える：本文中のbタグのウェイトを落として浮きを防ぐ */
 .card p b,.cta-wrap p b,.dd-bridge p b,.hero p b{font-weight:700;}
-.card.hl{background:linear-gradient(160deg,rgba(242,200,75,.13),rgba(242,200,75,.02));border-color:rgba(242,200,75,.4);}
+.card.hl{background:linear-gradient(160deg, color-mix(in srgb,var(--tc,#f2c84b) 13%, transparent), rgba(255,255,255,.015));
+  border-color:color-mix(in srgb,var(--tc,#f2c84b) 40%, var(--line));}
+.card.hl h3{color:color-mix(in srgb,var(--tc,#f2c84b) 80%, #fff);}
 
 /* deepdive bridge（もっと詳しく聞いてみる＝後半5問へ） */
-.dd-bridge{margin-top:28px;background:linear-gradient(160deg,rgba(242,200,75,.14),rgba(255,255,255,.02));
-  border:1px solid rgba(242,200,75,.4);border-radius:18px;padding:24px 20px;text-align:center;}
-.dd-bridge h3{font-size:18px;font-weight:800;color:var(--gold);line-height:1.5;}
+.dd-bridge{margin-top:28px;background:linear-gradient(160deg, color-mix(in srgb,var(--tc,#f2c84b) 14%, transparent),rgba(255,255,255,.02));
+  border:1px solid color-mix(in srgb,var(--tc,#f2c84b) 40%, transparent);border-radius:18px;padding:24px 20px;text-align:center;}
+.dd-bridge h3{font-size:18px;font-weight:800;color:color-mix(in srgb,var(--tc,#f2c84b) 80%, #fff);line-height:1.5;}
 .dd-bridge p{font-size:14px;color:var(--sub);margin-top:12px;line-height:1.75;}
 
 /* 武器（深掘り結果） */
@@ -194,12 +221,15 @@ body{
 
   <!-- ===== RESULT（前半判定） ===== -->
   <section class="screen" id="s-result">
-    <div class="r-head"><span class="ai-tag">AI 鑑 定 結 果</span></div>
-    <div class="r-crest"><span class="emoji" id="rEmoji"></span></div>
-    <div class="r-you">あなたの魅力タイプは</div>
-    <div class="r-name" id="rName"></div>
-    <div class="r-lead" id="rLead"></div>
-    <span class="r-rarity" id="rRarity"></span>
+    <div class="r-scroll" id="rScroll">
+      <div class="r-head"><span class="ai-tag">AI 鑑 定 書</span></div>
+      <div class="r-deco"><i></i><span>あなたの魅力タイプ</span><i class="r"></i></div>
+      <div class="r-emblem"><span class="emoji" id="rEmoji"></span></div>
+      <div class="r-you">鑑定されたあなたは</div>
+      <div class="r-name" id="rName"></div>
+      <div class="r-lead" id="rLead"></div>
+      <span class="r-rarity" id="rRarity"></span>
+    </div>
 
     <div class="card hl">
       <h3>あなたの魅力の正体</h3>
@@ -229,11 +259,14 @@ body{
 
   <!-- ===== DEEP RESULT（深掘り＝武器＋CTA） ===== -->
   <section class="screen" id="s-deep">
-    <div class="r-head"><span class="ai-tag">AI 深 層 鑑 定</span></div>
-    <div class="r-crest"><span class="emoji" id="dEmoji"></span></div>
-    <div class="r-you">あなた＝<b id="dNameInline" style="color:var(--gold)"></b> が持つ</div>
-    <div class="r-name" style="font-size:26px;margin-top:6px;">3つの武器</div>
-    <p style="text-align:center;color:var(--sub);font-size:13.5px;margin-top:12px;">これが、あなたが無意識に使っている“人を動かす力”の正体です。</p>
+    <div class="r-scroll">
+      <div class="r-head"><span class="ai-tag">AI 深 層 鑑 定</span></div>
+      <div class="r-deco"><i></i><span>あなただけの才能</span><i class="r"></i></div>
+      <div class="r-emblem" style="width:104px;height:104px"><span class="emoji" id="dEmoji" style="font-size:54px"></span></div>
+      <div class="r-you" style="margin-top:16px">あなた＝<b id="dNameInline"></b> が持つ</div>
+      <div class="r-name" style="font-size:27px;margin-top:6px;">3つの武器</div>
+      <p style="text-align:center;color:var(--sub);font-size:13px;margin-top:12px;line-height:1.7;">これが、あなたが無意識に使っている<br>“人を動かす力”の正体です。</p>
+    </div>
 
     <div id="weapons"></div>
 
@@ -248,6 +281,7 @@ body{
       <h3>あなたの才能を活かす<br><span class="em">ロードマップ</span>に参加する</h3>
       <p>あなたの「3つの武器」を、<br><b style="color:var(--txt)">どう仕事と収入に変えていくか</b>。<br>その具体的なロードマップを、無料でお渡しします。<br>下のボタンから受け取ってください。</p>
       <a id="ctaLink" href="#" target="_blank" rel="noopener"><button class="btn line" style="margin-top:22px;">LINEでロードマップを受け取る</button></a>
+      <p style="font-size:11px;color:var(--sub);margin-top:14px;line-height:1.7;opacity:.85;">※本鑑定は自己理解・エンタメを目的としたものです。<br>記載のタイプ・比率は特性を表す演出であり、成果を保証するものではありません。成果には個人差があります。</p>
     </div>
 
     <div class="share">
@@ -273,7 +307,7 @@ let phase="front";          // "front" | "back"
 let cur=0, frontAns=[], backAns=[], locked=false, resultKey=null;
 
 // top type chips
-$("topTypes").innerHTML = TYPE_ORDER.map(k=>`<div class="type-chip" title="${TYPES[k].name}">${TYPES[k].emoji}</div>`).join("");
+$("topTypes").innerHTML = TYPE_ORDER.map(k=>`<div class="type-chip" title="${TYPES[k].name}"><img src="${TYPES[k].img}" alt="${TYPES[k].name}"></div>`).join("");
 
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');window.scrollTo(0,0);}
 
@@ -339,10 +373,11 @@ function renderFront(){
   const r = diagnose(frontAns, null);
   resultKey = r.key;
   const t = r.type;
-  $("rEmoji").textContent = t.emoji;
+  $("rEmoji").outerHTML = `<img id="rEmoji" src="${t.img}" alt="${t.name}">`;
   $("rName").textContent = t.name;
   $("rLead").textContent = t.lead;
   $("rRarity").textContent = `100人に ${t.rarity} 人 ／ 6タイプ中`;
+  document.documentElement.style.setProperty('--tc', t.color||'#f2c84b');
   $("rShort").textContent = t.short;
   $("rDesc").textContent = t.desc;
   show('s-result');
@@ -354,8 +389,10 @@ function renderDeep(){
   // 前半で出た型を主軸に固定（ブレ防止）。深層は補強に使う設計。
   const key = resultKey || r.key;
   const t = TYPES[key];
-  $("dEmoji").textContent = t.emoji;
+  $("dEmoji").outerHTML = `<img id="dEmoji" src="${t.img}" alt="${t.name}">`;
   $("dNameInline").textContent = t.name;
+  document.documentElement.style.setProperty('--tc', t.color||'#f2c84b');
+  $("dNameInline").style.color = t.color||'#f2c84b';
   $("dMoney").textContent = t.money;
   const wlabels = ["第一の武器","第二の武器","第三の武器"];
   $("weapons").innerHTML = t.weapons.map((w,i)=>`
