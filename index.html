@@ -37,28 +37,37 @@ body{
 
 /* ---- TOP ---- */
 .brand{text-align:center;font-size:12px;letter-spacing:.32em;color:var(--gold);margin-top:18px;font-weight:700;}
-.ai-badge{display:inline-block;margin:0 auto;font-size:11px;letter-spacing:.12em;font-weight:800;color:#2a1d00;
-  background:linear-gradient(135deg,var(--goldlt),var(--gold2));border-radius:99px;padding:5px 16px;
-  box-shadow:0 4px 16px rgba(242,200,75,.4);}
+.ai-badge{display:inline-flex;align-items:center;gap:.7em;margin:0 auto;font-size:11px;letter-spacing:.34em;font-weight:700;
+  color:var(--goldlt);background:transparent;padding:6px 4px;border:none;}
+.ai-badge::before,.ai-badge::after{content:"";width:26px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold));}
+.ai-badge::after{background:linear-gradient(90deg,var(--gold),transparent);}
 .hero{text-align:center;margin-top:26px;}
 .hero .crest{font-size:46px;animation:glow 2.6s ease-in-out infinite;}
-.hero h1{font-size:31px;font-weight:800;letter-spacing:.06em;line-height:1.5;margin-top:8px;
+.hero .crest-img{width:188px;max-width:62%;display:block;margin:6px auto 0;
+  filter:drop-shadow(0 6px 30px rgba(242,200,75,.5));animation:floaty 5s ease-in-out infinite;}
+@keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.hero .sub-deco{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;}
+.hero .sub-deco i{height:1px;width:34px;background:linear-gradient(90deg,transparent,rgba(242,200,75,.7));}
+.hero .sub-deco i.r{background:linear-gradient(90deg,rgba(242,200,75,.7),transparent);}
+.hero .sub-deco span{font-size:11px;letter-spacing:.18em;color:var(--gold);font-weight:700;}
+.hero h1{font-size:31px;font-weight:800;letter-spacing:.06em;line-height:1.5;margin-top:14px;
   font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
-  background:linear-gradient(135deg,#fff 18%,var(--goldlt) 58%,var(--gold) 100%);
+  background:linear-gradient(135deg,#fff 22%,var(--goldlt) 62%,var(--gold) 100%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  text-shadow:0 2px 20px rgba(242,200,75,.15);}
+  text-shadow:0 1px 12px rgba(242,200,75,.08);}
 .hero .sub-title{color:var(--gold);font-size:15px;font-weight:700;margin-top:14px;letter-spacing:.06em;}
 .hero p.desc{color:var(--sub);margin-top:18px;font-size:15px;}
 .hero p.desc b{color:var(--txt);}
 .types-row{display:flex;justify-content:center;gap:9px;margin:24px 0 6px;flex-wrap:wrap;}
 .type-chip{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;
   font-size:26px;border:1px solid var(--line);background:rgba(255,255,255,.04);box-shadow:0 4px 16px rgba(0,0,0,.4);}
-.type-chip img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.type-chip img{width:130%;height:130%;object-fit:cover;object-position:50% 26%;border-radius:50%;}
 .btn{
   display:block;width:100%;border:none;cursor:pointer;position:relative;overflow:hidden;
-  background:linear-gradient(135deg,var(--goldlt),var(--gold2));color:#2a1d00;
+  background:linear-gradient(135deg,#f5d98a 0%,#e0a83a 55%,#c98a2a 100%);color:#2a1900;
   font-size:18px;font-weight:800;letter-spacing:.05em;padding:19px;border-radius:16px;line-height:1.4;
-  box-shadow:0 8px 28px rgba(242,200,75,.4);transition:transform .15s;margin-top:28px;
+  box-shadow:0 8px 28px rgba(224,168,58,.4);transition:transform .15s;margin-top:28px;
 }
 .btn:active{transform:scale(.97);}
 .btn::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
@@ -125,7 +134,7 @@ body{
 .r-emblem::before{content:"";position:absolute;inset:-9px;border-radius:50%;
   border:1px dashed color-mix(in srgb,var(--tc,#f2c84b) 40%, transparent);animation:spin 32s linear infinite;}
 .r-emblem .emoji{font-size:66px;animation:glow 2.6s ease-in-out infinite;display:inline-block;}
-.r-emblem img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
+.r-emblem img{width:138%;height:138%;border-radius:50%;object-fit:cover;object-position:50% 24%;display:block;
   box-shadow:0 0 30px color-mix(in srgb,var(--tc,#f2c84b) 35%, transparent);}
 .r-you{color:var(--sub);font-size:13.5px;text-align:center;margin-top:18px;letter-spacing:.08em;}
 .r-name{font-size:36px;font-weight:800;text-align:center;margin-top:6px;letter-spacing:.06em;
@@ -172,6 +181,7 @@ body{
   border:1.5px solid rgba(242,200,75,.5);border-radius:20px;padding:28px 22px;text-align:center;
   box-shadow:0 10px 40px rgba(0,0,0,.4);}
 .cta-wrap .cta-crest{font-size:34px;animation:glow 2.6s ease-in-out infinite;}
+.cta-wrap .cta-crest-img{width:72px;display:block;margin:0 auto;filter:drop-shadow(0 4px 18px rgba(242,200,75,.5));}
 .cta-wrap h3{font-size:21px;font-weight:800;color:#fff;margin-top:10px;line-height:1.55;letter-spacing:.03em;
   font-family:"Hiragino Mincho ProN","Yu Mincho",serif;}
 .cta-wrap h3 .em{color:var(--gold);}
@@ -189,11 +199,11 @@ body{
 
   <!-- ===== TOP ===== -->
   <section class="screen active" id="s-top">
-    <div style="text-align:center;margin-top:6px;"><span class="ai-badge">AI 魅 力 鑑 定</span></div>
+    <div style="text-align:center;margin-top:14px;"><span class="ai-badge">AI 魅 力 鑑 定</span></div>
     <div class="hero">
-      <div class="crest">✨</div>
+      <img class="crest-img" src="img/crest.png" alt="鑑定の紋章">
       <h1>人を動かす<br>あなたの才能</h1>
-      <div class="sub-title">〜 AIが、あなたの隠れた魅力を鑑定します 〜</div>
+      <div class="sub-deco"><i></i><span>AIが鑑定する、あなたの隠れた魅力</span><i class="r"></i></div>
       <p class="desc"><b>たった5つの質問</b>でわかる、<br>あなたが生まれ持った<br><b>「人を動かす力」</b>のタイプ。</p>
     </div>
     <div class="types-row" id="topTypes"></div>
@@ -277,7 +287,7 @@ body{
 
     <!-- 最終CTA -->
     <div class="cta-wrap">
-      <div class="cta-crest">✨</div>
+      <img class="cta-crest-img" src="img/crest.png" alt="">
       <h3>あなたの才能を活かす<br><span class="em">ロードマップ</span>に参加する</h3>
       <p>あなたの「3つの武器」を、<br><b style="color:var(--txt)">どう仕事と収入に変えていくか</b>。<br>その具体的なロードマップを、無料でお渡しします。<br>下のボタンから受け取ってください。</p>
       <a id="ctaLink" href="#" target="_blank" rel="noopener"><button class="btn line" style="margin-top:22px;">LINEでロードマップを受け取る</button></a>
