@@ -62,7 +62,7 @@ body{
 .types-row{display:flex;justify-content:center;gap:9px;margin:24px 0 6px;flex-wrap:wrap;}
 .type-chip{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;
   font-size:26px;border:1px solid var(--line);background:rgba(255,255,255,.04);box-shadow:0 4px 16px rgba(0,0,0,.4);}
-.type-chip img{width:130%;height:130%;object-fit:cover;object-position:50% 26%;border-radius:50%;}
+.type-chip img{width:118%;height:118%;object-fit:cover;object-position:50% 18%;border-radius:50%;}
 .btn{
   display:block;width:100%;border:none;cursor:pointer;position:relative;overflow:hidden;
   background:linear-gradient(135deg,#f5d98a 0%,#e0a83a 55%,#c98a2a 100%);color:#2a1900;
@@ -133,8 +133,8 @@ body{
 .r-emblem::before{content:"";position:absolute;inset:-9px;border-radius:50%;
   border:1px dashed color-mix(in srgb,var(--tc,#f2c84b) 40%, transparent);animation:spin 32s linear infinite;}
 .r-emblem .emoji{font-size:66px;animation:glow 2.6s ease-in-out infinite;display:inline-block;}
-.r-emblem img{position:absolute;top:50%;left:50%;width:138%;height:138%;transform:translate(-50%,-50%);
-  border-radius:50%;object-fit:cover;object-position:50% 22%;display:block;
+.r-emblem img{position:absolute;top:50%;left:50%;width:122%;height:122%;transform:translate(-50%,-50%);
+  border-radius:50%;object-fit:cover;object-position:50% 16%;display:block;
   clip-path:circle(50% at 50% 50%);}
 .r-you{color:var(--sub);font-size:13.5px;text-align:center;margin-top:18px;letter-spacing:.08em;}
 .r-name{font-size:36px;font-weight:800;text-align:center;margin-top:6px;letter-spacing:.06em;
@@ -164,6 +164,10 @@ body{
 .card p b,.cta-wrap p b,.dd-bridge p b,.hero p b{font-weight:700;}
 .card.hl{background:linear-gradient(160deg, color-mix(in srgb,var(--tc,#f2c84b) 13%, transparent), rgba(255,255,255,.015));
   border-color:color-mix(in srgb,var(--tc,#f2c84b) 40%, var(--line));}
+.card.twist{background:linear-gradient(160deg, rgba(120,90,200,.16), rgba(255,255,255,.01));
+  border-color:rgba(150,120,230,.4);box-shadow:0 8px 30px rgba(60,40,110,.3);}
+.card.twist h3{color:#cbb6ff;background-image:linear-gradient(90deg,#b79bff,transparent 72%);}
+.card.twist h3::before{background:linear-gradient(180deg,#cbb6ff,#7a5ad0);}
 .card.hl h3{color:color-mix(in srgb,var(--tc,#f2c84b) 80%, #fff);}
 
 /* deepdive bridge（もっと詳しく聞いてみる＝後半5問へ） */
@@ -256,6 +260,11 @@ body{
     <div class="card">
       <h3>この魅力が、人を惹きつける</h3>
       <p id="rDesc"></p>
+    </div>
+
+    <div class="card twist">
+      <h3>…でも、あなたはこう思っていませんか？</h3>
+      <p id="rTwist"></p>
     </div>
 
     <!-- もっと詳しく聞いてみる（後半5問へ） -->
@@ -397,6 +406,7 @@ function renderFront(){
   document.documentElement.style.setProperty('--tc', t.color||'#f2c84b');
   $("rShort").textContent = t.short;
   $("rDesc").textContent = t.desc;
+  $("rTwist").textContent = t.twist || "";
   show('s-result');
 }
 
