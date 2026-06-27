@@ -271,7 +271,7 @@ body{
 
     <div class="card twist">
       <h3>🤍 ...でも、あなたはこう思っていませんか?</h3>
-      <p id="rTwist"></p>
+      <p id="rTwist" style="white-space:pre-line;"></p>
     </div>
 
     <!-- もっと詳しく聞いてみる（後半5問へ） -->
@@ -319,7 +319,7 @@ body{
     </div>
 
     <div class="share">
-      <button class="btn ghost" onclick="restart()">友だちにもやらせてみる</button>
+      <button class="btn ghost" onclick="shareResult()">📤 友だちにもやらせてみる</button>
     </div>
     <div class="foot">
       AI魅力鑑定 〜人を動かすあなたの才能〜<br>
@@ -351,6 +351,28 @@ function start(){ phase="front"; cur=0; frontAns=[]; locked=false; show('s-q'); 
 function startBack(){ phase="back"; cur=0; backAns=[]; locked=false; show('s-q'); render(); }
 function restart(){ try{history.replaceState(null,"",location.pathname);}catch(e){} show('s-top'); }
 
+async function shareResult(){
+  const t = resultKey ? TYPES[resultKey] : null;
+  const url = "https://ambitious20210803-alt.github.io/miryoku-kantei/";
+  const title = "AI魅力鑑定 〜人を動かすあなたの才能〜";
+  const text = t
+    ? `私は「${t.name}」タイプでした✨\nあなたの“人を動かす才能”も無料で鑑定できます👇`
+    : `あなたの“人を動かす才能”を無料で鑑定👇`;
+  // モバイル等：ネイティブ共有
+  if(navigator.share){
+    try{ await navigator.share({title, text, url}); return; }catch(e){ if(e && e.name==="AbortError") return; }
+  }
+  // フォールバック：URL+テキストをコピー
+  const full = text + "\n" + url;
+  try{
+    await navigator.clipboard.writeText(full);
+    alert("シェア用のテキストとURLをコピーしました！\nLINEやSNSに貼り付けて送ってください。");
+  }catch(e){
+    // さらにフォールバック：プロンプト表示
+    window.prompt("このURLをコピーして友だちに送ってください：", url);
+  }
+}
+
 function render(){
   const L=curList(), Q=L[cur], total=L.length, remain=total-cur;
   const prefix = phase==="back" ? "深層 Q" : "Q";
@@ -380,7 +402,7 @@ function choose(i,btn){
   // 持ち上げコメント(選択肢個別 c があれば優先、なければ設問共通 c)
   const comment = (Q.choices[i] && Q.choices[i].c) ? Q.choices[i].c : (Q.c||"");
   if(comment){ $("qcomment").textContent=comment; void $("qcomment").offsetWidth; $("qcomment").classList.add("show"); }
-  const delay = comment ? 1050 : 250;
+  const delay = comment ? 2100 : 350;
   setTimeout(()=>{
     if(cur < L.length-1){ cur++; render(); }
     else finish();
