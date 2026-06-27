@@ -255,7 +255,7 @@ body{
       <div class="r-lead" id="rLead"></div>
       <div class="r-bless" id="rBless" style="margin-top:14px;font-size:15px;font-weight:800;line-height:1.8;color:var(--goldlt);text-align:center;"></div>
       <span class="r-rarity" id="rRarity"></span>
-      <p class="r-rarity-why" id="rRarityWhy" style="margin-top:10px;font-size:12.5px;line-height:1.8;color:#c3ccea;text-align:center;"></p>
+      <p class="r-rarity-why" id="rRarityWhy" style="margin-top:10px;font-size:13px;line-height:1.8;color:#dde3f5;text-align:center;"></p>
     </div>
 
     <div class="card hl">
@@ -263,10 +263,6 @@ body{
       <p id="rShort"></p>
     </div>
 
-    <div class="card">
-      <h3>🔮 もしかして、思い当たりませんか？</h3>
-      <ul id="rHints" style="list-style:none;padding:0;margin:0;"></ul>
-    </div>
 
     <div class="card">
       <h3>💫 この魅力が、人を惹きつける</h3>
@@ -398,7 +394,7 @@ function finish(){
   $("bar").style.width="100%";
   show('s-load');
   const msgs = phase==="front"
-    ? ["AIがあなたの魅力を鑑定しています...","6つの才能の中から探しています...","あなたのタイプを特定しています..."]
+    ? ["AIがあなたの魅力を鑑定しています...","回答内容だけでなく、考えていた時間や迷いまで読み取っています...","あなたのタイプを特定しています..."]
     : ["あなたの“武器”を読み解いています...","才能の使い方を分析しています...","鑑定結果をまとめています..."];
   $("loadMsg").textContent=msgs[0];
   let mi=0; const t=setInterval(()=>{mi=(mi+1)%msgs.length;$("loadMsg").textContent=msgs[mi];},850);
@@ -418,7 +414,6 @@ function renderFront(){
   $("rBless").textContent = t.bless || "";
   $("rRarity").textContent = `100人に ${t.rarity} 人 だけが持つタイプ`;
   $("rRarityWhy").textContent = t.rarityWhy || "";
-  $("rHints").innerHTML = (t.hints||[]).map(h=>`<li style="position:relative;padding:11px 14px 11px 34px;margin-bottom:9px;background:rgba(242,200,75,.06);border-radius:11px;font-size:14px;line-height:1.7;color:var(--txt);"><span style="position:absolute;left:12px;top:11px;color:var(--gold);">✓</span>${h}</li>`).join("");
   document.documentElement.style.setProperty('--tc', t.color||'#f2c84b');
   $("rShort").textContent = t.short;
   $("rDesc").textContent = t.desc;
