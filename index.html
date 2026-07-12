@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI魅力鑑定|人を動かすあなたの才能</title>
+<title>AI才能鑑定｜あなたに眠る「人を動かす武器」</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b1026'/%3E%3Ctext y='70' x='50' font-size='56' text-anchor='middle'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E">
-<meta name="description" content="5つの質問でわかる、人を動かすあなたの隠れた才能。AI魅力鑑定で、あなたのタイプと"稼ぐ力"の正体を見つけましょう。">
+<meta name="description" content="5つの質問でわかる、あなたに眠る「人を動かす武器」。AI才能鑑定で、あなたのタイプと"稼ぐ力"の正体を見つけましょう。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="AI魅力鑑定|人を動かすあなたの才能">
+<meta property="og:title" content="AI才能鑑定｜あなたに眠る「人を動かす武器」">
 <meta property="og:description" content="5つの質問でわかる、人を動かすあなたの隠れた才能。">
 <style>
 :root{
@@ -210,11 +210,11 @@ body{
 
   <!-- ===== TOP ===== -->
   <section class="screen active" id="s-top">
-    <div style="text-align:center;margin-top:14px;"><span class="ai-badge">AI 魅 力 鑑 定</span></div>
+    <div style="text-align:center;margin-top:14px;"><span class="ai-badge">AI 才 能 鑑 定</span></div>
     <div class="hero">
       <img class="crest-img" src="img/crest.png" alt="鑑定の紋章">
-      <h1>人を動かす<br>あなたの才能</h1>
-      <div class="sub-deco"><i></i><span>AIが鑑定する、あなたの隠れた魅力</span><i class="r"></i></div>
+      <h1>あなたに眠る<br>「人を動かす武器」</h1>
+      <div class="sub-deco"><i></i><span>AIが鑑定する、あなたの隠れた才能</span><i class="r"></i></div>
       <p class="desc"><b>たった5つの質問</b>でわかる、<br>あなたが生まれ持った<br><b>「人を動かす力」</b>のタイプ。</p>
     </div>
     <div class="types-row" id="topTypes"></div>
@@ -240,7 +240,7 @@ body{
   <section class="screen" id="s-load">
     <div class="loadwrap">
       <div class="spinner"></div>
-      <p id="loadMsg">AIがあなたの魅力を鑑定しています...</p>
+      <p id="loadMsg">AIがあなたの才能を鑑定しています...</p>
     </div>
   </section>
 
@@ -248,7 +248,7 @@ body{
   <section class="screen" id="s-result">
     <div class="r-scroll" id="rScroll">
       <div class="r-head"><span class="ai-tag">AI 鑑 定 書</span></div>
-      <div class="r-deco"><i></i><span>あなたの魅力タイプ</span><i class="r"></i></div>
+      <div class="r-deco"><i></i><span>あなたの才能タイプ</span><i class="r"></i></div>
       <div class="r-emblem"><span class="emoji" id="rEmoji"></span></div>
       <div class="r-you">鑑定されたあなたは</div>
       <div class="r-name" id="rName"></div>
@@ -259,13 +259,13 @@ body{
     </div>
 
     <div class="card hl">
-      <h3>✨ あなたの魅力の正体</h3>
+      <h3>✨ あなたの才能の正体</h3>
       <p id="rShort"></p>
     </div>
 
 
     <div class="card">
-      <h3>💫 この魅力が、人を惹きつける</h3>
+      <h3>💫 この才能が、人を惹きつける</h3>
       <p id="rDesc"></p>
     </div>
 
@@ -286,7 +286,7 @@ body{
       <button class="btn ghost" onclick="restart()">別の自分も鑑定してみる</button>
     </div>
     <div class="foot">
-      AI魅力鑑定 〜人を動かすあなたの才能〜<br>
+      AI才能鑑定 〜あなたに眠る「人を動かす武器」〜<br>
       ※この鑑定はエンタメ・自己理解を目的としたものです
     </div>
   </section>
@@ -322,7 +322,7 @@ body{
       <button class="btn ghost" onclick="shareResult()">📤 この鑑定を友だちにも送る</button>
     </div>
     <div class="foot">
-      AI魅力鑑定 〜人を動かすあなたの才能〜<br>
+      AI才能鑑定 〜あなたに眠る「人を動かす武器」〜<br>
       ※この鑑定はエンタメ・自己理解を目的としたものです
     </div>
   </section>
@@ -354,7 +354,7 @@ function restart(){ try{history.replaceState(null,"",location.pathname);}catch(e
 async function shareResult(){
   const t = resultKey ? TYPES[resultKey] : null;
   const url = "https://ambitious20210803-alt.github.io/miryoku-kantei/";
-  const title = "AI魅力鑑定 〜人を動かすあなたの才能〜";
+  const title = "AI才能鑑定 〜あなたに眠る「人を動かす武器」〜";
   const text = t
     ? `私は「${t.name}」タイプでした✨\nあなたの“人を動かす才能”も無料で鑑定できます👇`
     : `あなたの“人を動かす才能”を無料で鑑定👇`;
@@ -416,7 +416,7 @@ function finish(){
   $("bar").style.width="100%";
   show('s-load');
   const msgs = phase==="front"
-    ? ["AIがあなたの魅力を鑑定しています...","回答内容だけでなく、考えていた時間や迷いまで読み取っています...","あなたのタイプを特定しています..."]
+    ? ["AIがあなたの才能を鑑定しています...","回答内容だけでなく、考えていた時間や迷いまで読み取っています...","あなたのタイプを特定しています..."]
     : ["あなたの“武器”を読み解いています...","才能の使い方を分析しています...","鑑定結果をまとめています..."];
   $("loadMsg").textContent=msgs[0];
   let mi=0; const t=setInterval(()=>{mi=(mi+1)%msgs.length;$("loadMsg").textContent=msgs[mi];},850);
